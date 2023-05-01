@@ -329,7 +329,7 @@ while True:
                         a+=1
                 marked.append(enrol_num)          
                                  
-    # Naming the openCV window                             
+    # Naming the OpenCV window                             
     cv2.imshow("Attendence system",frame)
     if cv2.waitKey(1) == ord('c'):# window closes when "c" is pressed
         break
