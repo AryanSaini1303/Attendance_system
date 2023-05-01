@@ -101,7 +101,6 @@ c1 = Checkbutton(main_frame, text = "T1",
                       height = 2,
                       width = 1,
                       font=('Courier',15))
-  
 c2 = Checkbutton(main_frame, text = "T2",
                       variable = category2,
                       onvalue = 1,
@@ -109,7 +108,6 @@ c2 = Checkbutton(main_frame, text = "T2",
                       height = 2,
                       width = 1,
                       font=('Courier',15))
-  
 c3 = Checkbutton(main_frame, text = "T3",
                       variable = category3,
                       onvalue = 1,
@@ -117,7 +115,6 @@ c3 = Checkbutton(main_frame, text = "T3",
                       height = 2,
                       width = 1,
                       font=('Courier',15))
-
 c4 = Checkbutton(main_frame, text = "T4",
                       variable = category4,
                       onvalue = 1,
