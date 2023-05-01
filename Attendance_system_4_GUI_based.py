@@ -152,10 +152,10 @@ category=data_1[3]
 subject_code,subject_name=subject.split("(")
 
 # Providing file path of the images
-filePathAT1='C:/NEW FOLDER/artificial intelligence/Attendance_system/new_database/Student_Images/Section A/T 1'
-filePathAT2='C:/NEW FOLDER/artificial intelligence/Attendance_system/new_database/Student_Images/Section A/T 2'
-filePathCT3='C:/NEW FOLDER/artificial intelligence/Attendance_system/new_database/Student_Images/Section C/T 3'
-filePathCT4='C:/NEW FOLDER/artificial intelligence/Attendance_system/new_database/Student_Images/Section C/T 4'
+filePathAT1='C:/NEW FOLDER/CODE/artificial intelligence/Attendance_system/new_database/Student_Images/Section A/T 1'
+filePathAT2='C:/NEW FOLDER/CODE/artificial intelligence/Attendance_system/new_database/Student_Images/Section A/T 2'
+filePathCT3='C:/NEW FOLDER/CODE/artificial intelligence/Attendance_system/new_database/Student_Images/Section C/T 3'
+filePathCT4='C:/NEW FOLDER/CODE/artificial intelligence/Attendance_system/new_database/Student_Images/Section C/T 4'
 
 # Creating variables for importing and encoding the required images
 directory=[]
@@ -253,9 +253,9 @@ now = datetime.now()
 # current_date = now.strftime("%d-%m-%Y")
 current_date="28-03-2023"
 if session_type=="THEORY":
-    record_path="C:/NEW FOLDER/artificial intelligence/Attendance_system/new_database/attendance_record/"+subject_code+"/"+session_type+"/"+section+".csv"
+    record_path="C:/NEW FOLDER/CODE/artificial intelligence/Attendance_system/new_database/attendance_record/"+subject_code+"/"+session_type+"/"+section+".csv"
 elif session_type=="LAB":
-    record_path="C:/NEW FOLDER/artificial intelligence/Attendance_system/new_database/attendance_record/"+subject_code+"/"+session_type+"/"+category+".csv"
+    record_path="C:/NEW FOLDER/CODE/artificial intelligence/Attendance_system/new_database/attendance_record/"+subject_code+"/"+session_type+"/"+category+".csv"
 df=pd.read_csv(record_path)
 total_columns=len(df.axes[1])
 df = pd.read_csv(record_path)
@@ -308,7 +308,7 @@ while True:
                         fontColor,
                         thickness,
                         lineType)# writing text on opencv window
-                    playsound('C://NEW FOLDER//artificial intelligence//Attendance_system//message-incoming-132126.mp3')
+                    playsound('C://NEW FOLDER//CODE//artificial intelligence//Attendance_system//message-incoming-132126.mp3')
                     current_time = now.strftime("%H:%M:%S")# set current time
                     print(enrol_num,"is marked present")
                     print("Entry time:",current_time)
