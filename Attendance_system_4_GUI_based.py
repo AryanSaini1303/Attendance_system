@@ -67,6 +67,7 @@ sub_options=['CHE1003(Bio-sciences_Nanotechnology)',
              'CSE2718(Computer Architecture)']
 sub_entry=ttk.Combobox(main_frame,values=sub_options,width=50,height=25)
 sub_entry.grid(row=0,column=1,sticky='w',padx=20,pady=20)
+
 #Session type input
 session_lb=Label(main_frame,text='SESSION',font=('Cambria',17,'bold'))
 session_lb.grid(row=1,column=0,padx=20,pady=20)
@@ -127,7 +128,7 @@ c2.grid(row=3,column=1,padx=10)
 c3.grid(row=4,column=1,padx=10,sticky='w')
 c4.grid(row=4,column=1,padx=10)
 
-#submit button
+#Submit button
 data_1=[]
 main_frame2=LabelFrame(frame,text='')
 main_frame2.grid(row=5,column=0,padx=20,pady=5)
@@ -247,7 +248,8 @@ elif session_type=="THEORY":
 
 # Creating csv file     
 now = datetime.now()
-# current_date = now.strftime("%d-%m-%Y")
+
+# Current_date = now.strftime("%d-%m-%Y")
 current_date="28-03-2023"
 if session_type=="THEORY":
     record_path="C:/NEW FOLDER/CODE/artificial intelligence/Attendance_system/new_database/attendance_record/"+subject_code+"/"+session_type+"/"+section+".csv"
@@ -270,10 +272,9 @@ start_time=time.time()
 # Initialising face recognition
 cap = cv2.VideoCapture(0)
 while True:
-    # closes the program after 20 minutes
     if (time.time()-start_time)>1200:
         print("Times up!, no attendance will be marked now")
-        exit(0)  
+        exit(0)# Closes the program after 20 minutes
     _,frame = cap.read()
     small_frame = cv2.resize(frame,(0,0),fx=0.25,fy=0.25)
     rgb_small_frame = small_frame[:,:,::-1]
@@ -294,7 +295,7 @@ while True:
                     now = datetime.now()
                     font = cv2.FONT_HERSHEY_SIMPLEX
                     org=(50,50)
-                    fontScale= 1# setting attributes for the text
+                    fontScale= 1# Setting attributes for the text
                     fontColor= (0,255,0)
                     thickness= 3
                     lineType = 2
@@ -304,9 +305,9 @@ while True:
                         fontScale,
                         fontColor,
                         thickness,
-                        lineType)# writing text on opencv window
+                        lineType)# Writing text on opencv window
                     playsound('C://NEW FOLDER//CODE//artificial intelligence//Attendance_system//message-incoming-132126.mp3')
-                    current_time = now.strftime("%H:%M:%S")# set current time
+                    current_time = now.strftime("%H:%M:%S")# Set current time
                     print(enrol_num,"is marked present")
                     print("Entry time:",current_time)
                     if session_type=="LAB":
@@ -328,7 +329,7 @@ while True:
                                  
     # Naming the OpenCV window                             
     cv2.imshow("Attendence system",frame)
-    if cv2.waitKey(1) == ord('c'):# window closes when "c" is pressed
+    if cv2.waitKey(1) == ord('c'):# Window closes when "c" is pressed
         break
 cap.release()
 cv2.destroyAllWindows()
